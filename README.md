@@ -35,7 +35,7 @@ goldbach 함수:
     아직 일반화된 증명은 이루어지지 않은 공식, 하지만 10^8까지는 증명을 마친 상태이다.
 
 
-## N_for
+## 3.N_for
 
 check_sum 함수:
 
@@ -45,7 +45,7 @@ check_sum 함수:
     문제의 조건 중 N이 1~10이라는 제한이 있기때문에 10개의 for loop를 중첩하여 구성
     
     	
-## Brute force
+## 4.Brute force
  
     가능한 모든 경우의 수에 대해서 시도를 해보는 방법
     - 가능한 모든 방법을 모두 만들어 본다.(이때 모든 경우를 커버할 수 있어야 한다)
@@ -63,7 +63,7 @@ ESM_date:
     연도를 나타내는 주어진 세개의 숫자 E,S,M을 보고 현재가 몇년도 인지 확인하는 문제
     1<= E <= 15, 1<= S <= 28, 1<= M <= 19의 범위를 가진다.
     
-## Permutation
+## 5.Permutation
 
     순열을 이용하여 해결할 수 있는 문제들의 집합
     
@@ -110,3 +110,67 @@ biggest_diff:
     https://www.acmicpc.net/problem/10819
     |A[0] - A[1]| + |A[1] - A[2]| + .... + |A[N-2] - A[N-1]의 값이 최대되는 순열을 구하고 그 값을 구한다.
     주어진 입력에 대하여 next_permu를 돌리며 이를 확인한다.
+    
+## 6. BFSDFS (Breadth-First Search / Depth-First Search)
+  
+    인접행렬을 사용하여 그래프를 탐색하는 알고리즘 코드
+    참고: 그래프를 표현하는 방법은 인정행렬 / 인접리스트로 표현하는 두가지가 있다.
+    
+bfs:
+
+    루트 노드에서 시작해서 인접한 노드를 먼저 먼저 탐색하는 방법
+    reference: <https://gmlwjd9405.github.io/2018/08/15/algorithm-bfs.html>
+    
+dfs:
+    
+    루트 노드에서 시작해서 다음 branch로 넘어가기 전에 해당 branch를 모두 검색하는 방법
+    reference: <https://gmlwjd9405.github.io/2018/08/14/algorithm-dfs.html>
+    
+## 6. BFS_application
+
+    bfs를 응용하여 풀수 있는 문제들 모음
+    
+hide_seek:
+
+    https://www.acmicpc.net/problem/1697
+    숨바꼭질 문제 (x에서 y로 이동하기 위한 최소 이동 수를 구하는 문제)
+    x*2, x+1, x-1로 이동 가능 (각 1초씩 걸림)
+    
+emoticon:
+
+    https://www.acmicpc.net/problem/14226
+    화면에 이모티콘이 1개 띄워져 있을 경우, 화면에 S개의 이모티콘을 띄우기 위해서 수행해야하는 연산의 수
+    가능한 연산
+    * 화면에 있는 이모티콘을 클립보드에 저장
+    * 클립보드에 있는 이모티콘을 화면에 복사
+    * 화면에 있는 이모티콘 중 하나 삭제
+   
+hide_seek_adv:
+
+    https://www.acmicpc.net/problem/13549
+    숨바꼭질 문제 (x에서 y로 이동하기 위한 최소 이동 수를 구하는 문제)
+    hide_seek 알고리즘에 추가 조건이 들어간 문제
+    x*2, x+1, x-1로 이동 가능 (x*2는 0초, x+1, x-1은 초 걸림))
+    
+wall_cost_cal:
+  
+    https://www.acmicpc.net/problem/1261
+    N * M 크기의 배열에서 (0,0)에서 (N-1, M-1)로 이동하는 최소 시간을 계산
+    주어진 배열에서 0인 지점으로 이동하는데에는 0초가 걸린다.
+    주어진 배열에서 1인 지점으로 이동하는데에는 1초가 걸린다.
+
+## 7. Dynamic
+    
+    Memoization을 통해서 피보나치 수열을 두가지 방법으로 구하는 문제
+    (top-down, bottom-up)
+    Memoization: 중간 결과를 하나의 배열에 저장하여 cache로 사용할 수 있도록한다. 이를 통해서 같은 계산을 반복적으로하는 것을 막아준다.
+    
+fibonacci_b:
+
+    Bottom-up 방식으로 구하는 피보나치 수열
+    
+    
+fibonacci_t:
+
+    Top-down 방식으로 구하는 피보나치 수열
+    
